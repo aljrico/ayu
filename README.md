@@ -139,9 +139,11 @@ The package also contains a few predefined diverging palettes. Those are
 available as stand-alone functions.
 
 ``` r
-par(mfrow=c(1,2))
-diverging_palette('darkBlueYellow') |> display_palette()
-diverging_palette('yellowRed') |> display_palette()
+par(mfrow=c(2,2))
+diverging_palette('darkBlueYellow') |> display_palette(xlab = 'darkBlueYellow')
+diverging_palette('yellowRed') |> display_palette(xlab = 'yellowRed')
+diverging_palette('spectral') |> display_palette(xlab = 'spectral')
+diverging_palette('purpleOrange') |> display_palette(xlab = 'purpleOrange')
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" height="250px" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
