@@ -1,0 +1,82 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# ayu
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of `ayu` is to provide a suite of tools to standardise the look of visualisations. By using the beautiful palette of [ayu](https://github.com/ayu-theme/ayu-colors) colours.
+
+## Installation
+
+You can install the development version of ayu from [GitHub](https://github.com/aljrico/ayu) with:
+
+```{r setup}
+# install.packages("devtools")
+devtools::install_github("aljrico/ayu")
+library(ayu)
+```
+
+## How to use
+
+##### Main Colours
+
+The most basic functionality `ayu` provides is the curated list of main colours. Simply retrieve them with:
+
+```{r example}
+get_main_colours()
+```
+
+##### Display Palette
+
+A quick way to visualise and print the colours is to make use of the `display_palette()` function. This will simply print the list of colours it gets passed.
+
+```{r display_palette}
+colours <- get_main_colours()
+display_palette(
+  c(
+    colours$mirage$red,
+    colours$mirage$yellow,
+    colours$mirage$green,
+    colours$mirage$blue
+  ),
+  xlab = 'Main Colours'
+)
+```
+
+##### Continuous Palettes
+
+
+
+```{r cars}
+par(mfrow=c(2,3))
+generate_continuous_palette(palettes$mirage$red) |> display_palette(xlab = 'Red')
+generate_continuous_palette(palettes$mirage$blue) |> display_palette(xlab = 'Blue')
+generate_continuous_palette(palettes$mirage$green) |> display_palette(xlab = 'Green')
+generate_continuous_palette(palettes$mirage$orange) |> display_palette(xlab = 'Orange')
+generate_continuous_palette(palettes$mirage$yellow) |> display_palette(xlab = 'Yellow')
+generate_continuous_palette(palettes$mirage$purple) |> display_palette(xlab = 'Purple')
+```
+
+You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
+
+You can also embed plots, for example:
+
+```{r pressure, echo = FALSE}
+plot(pressure)
+```
+
+In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.

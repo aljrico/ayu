@@ -10,7 +10,8 @@ get_main_colours <- function(){
       blue = c('#5CCFE6'),
       green = c('#87D96C'),
       orange= c('#FFAD66'),
-      purple = '#DFBFFF'
+      purple = '#DFBFFF',
+      darkblue = '#1f2430'
     )
   )
 }
