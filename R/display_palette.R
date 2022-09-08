@@ -4,7 +4,7 @@
 #' @param pal Array of colours in hex code
 #' @param xlab Label in the x axis
 #' @param ylab Label in the y axis
-#'
+#' @importFrom graphics image
 #' @export
 display_palette <- function(pal, xlab = "", ylab = "") {
   n <- length(pal)

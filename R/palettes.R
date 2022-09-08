@@ -1,0 +1,4 @@
+#' Palettes
+#'
+#'
+"palettes"
