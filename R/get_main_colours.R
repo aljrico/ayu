@@ -11,7 +11,11 @@ get_main_colours <- function(){
       green = c('#87D96C'),
       orange= c('#FFAD66'),
       purple = '#DFBFFF',
-      darkblue = '#1f2430'
+      darkblue = '#409fff'
+    ),
+    synthetic = list(
+      bluesea = '#67BFAD',
+      darkbluesea = '#25333D'
     )
   )
 }

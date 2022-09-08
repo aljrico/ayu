@@ -18,10 +18,10 @@ You can install the development version of ayu from
 ``` r
 # install.packages("devtools")
 devtools::install_github("aljrico/ayu")
-#> Skipping install of 'ayu' from a github remote, the SHA1 (cc99dd88) has not changed since last install.
-#>   Use `force = TRUE` to force installation
 library(ayu)
 ```
+
+    #> ℹ Loading ayu
 
 ## How to use
 
@@ -52,7 +52,15 @@ get_main_colours()
 #> [1] "#DFBFFF"
 #> 
 #> $mirage$darkblue
-#> [1] "#1f2430"
+#> [1] "#409fff"
+#> 
+#> 
+#> $synthetic
+#> $synthetic$bluesea
+#> [1] "#67BFAD"
+#> 
+#> $synthetic$darkbluesea
+#> [1] "#25333D"
 ```
 
 ##### Display Palette
@@ -76,7 +84,7 @@ display_palette(
 
 <img src="man/figures/README-display_palette-1.png" width="50%" style="display: block; margin: auto;" />
 
-##### Continuous Palettes
+##### Sequential Palettes
 
 A common approach to create palettes is to pick a main *hue* and modify
 the *saturation* and *value*. `ayu` provides a quick function to
@@ -84,19 +92,19 @@ facilitate that while maintaining a cohesive feel.
 
 ``` r
 par(mfrow=c(1,2))
-generate_continuous_palette(palettes$mirage$red) |> display_palette()
-generate_continuous_palette(palettes$mirage$blue) |> display_palette()
+generate_sequential_palette(colours$mirage$red) |> display_palette()
+generate_sequential_palette(colours$mirage$blue) |> display_palette()
 ```
 
 <img src="man/figures/README-continuous_palettes_1-1.png" width="100%" height="250px" />
 
-The `generate_continuous_palette()` function also provides a `contrast`
+The `generate_sequential_palette()` function also provides a `contrast`
 parameter to tweak the steepness of the gradient.
 
 ``` r
 par(mfrow=c(1,2))
-generate_continuous_palette(palettes$mirage$orange, contrast = 0.3) |> display_palette()
-generate_continuous_palette(palettes$mirage$orange, contrast = 0.6) |> display_palette()
+generate_sequential_palette(colours$mirage$orange, contrast = 0.3) |> display_palette()
+generate_sequential_palette(colours$mirage$orange, contrast = 0.6) |> display_palette()
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" height="250px" />
@@ -105,8 +113,33 @@ And the `n` parameter to select the number of colours generated
 
 ``` r
 par(mfrow=c(1,2))
-generate_continuous_palette(palettes$mirage$purple, n = 3) |> display_palette()
-generate_continuous_palette(palettes$mirage$purple, n = 15) |> display_palette()
+generate_sequential_palette(colours$mirage$purple, n = 3) |> display_palette()
+generate_sequential_palette(colours$mirage$purple, n = 15) |> display_palette()
 ```
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" height="250px" />
+
+##### Expand Palette
+
+To facilitate custom design of divergent palettes, the `ayu` package
+provides the `expand_palette()` function, that will take an arbitrary
+number of colours and create a continuum between them
+
+``` r
+par(mfrow=c(1,2))
+expand_palette(c(colours$mirage$green, colours$mirage$red), n = 10) |> display_palette()
+expand_palette(c(colours$mirage$green, colours$mirage$red), n = 100) |> display_palette()
+```
+
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" height="250px" />
+
+##### Diverging Palettes
+
+The package also contains a few predefined diverging palettes. Those are
+available as stand-alone functions.
+
+``` r
+diverging_palette('darkBlueYellow') |> display_palette()
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="50%" style="display: block; margin: auto;" />
