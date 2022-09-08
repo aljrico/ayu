@@ -103,7 +103,9 @@ expand_palette(c(colours$mirage$green, colours$mirage$red), n = 100) |> display_
 
 The package also contains a few predefined diverging palettes. Those are available as stand-alone functions.
 
-```{r, out.width="50%", fig.align = 'center'}
+```{r, out.height='250px', dpi=500}
+par(mfrow=c(1,2))
 diverging_palette('darkBlueYellow') |> display_palette()
+diverging_palette('yellowRed') |> display_palette()
 ```
 

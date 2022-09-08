@@ -139,7 +139,9 @@ The package also contains a few predefined diverging palettes. Those are
 available as stand-alone functions.
 
 ``` r
+par(mfrow=c(1,2))
 diverging_palette('darkBlueYellow') |> display_palette()
+diverging_palette('yellowRed') |> display_palette()
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="50%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" height="250px" />
