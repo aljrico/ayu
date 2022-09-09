@@ -108,6 +108,6 @@ par(mfrow=c(2,2))
 diverging_palette('darkBlueYellow') |> display_palette(xlab = 'darkBlueYellow')
 diverging_palette('yellowRed') |> display_palette(xlab = 'yellowRed')
 diverging_palette('spectral') |> display_palette(xlab = 'spectral')
-diverging_palette('purpleOrange') |> display_palette(xlab = 'purpleOrange')
+diverging_palette('myridis') |> display_palette(xlab = 'myridis')
 ```
 
